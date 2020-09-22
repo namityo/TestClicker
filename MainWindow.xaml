@@ -6,7 +6,6 @@
         xmlns:local="clr-namespace:TestClicker"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
-        Closing="Window_Closing"
         Closed="Window_Closed">
 
     <!-- <Window.Resources>
