@@ -1,0 +1,48 @@
+﻿<Window x:Class="TestClicker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestClicker"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        Closing="Window_Closing"
+        Closed="Window_Closed">
+
+    <!-- <Window.Resources>
+        <ResourceDictionary>
+            <BitmapImage x:Key="ImageSource1" UriSource="pack://application:,,,/resources.cookie.png" />
+        </ResourceDictionary>
+    </Window.Resources> -->
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.4*"/>
+            <ColumnDefinition Width="0.3*"/>
+            <ColumnDefinition Width="0.3*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Width="100pt" Height="100pt" Click="OnClickCookies">
+                <Image x:Name="btnImage"/>
+            </Button>
+            <Label x:Name="lblCookiesCount" Height="50" FontSize="20pt" ContentStringFormat="0" Content="{Binding TotalCookies}"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1">
+            <Label Height="50" FontSize="20pt" ContentStringFormat="Item1 : ###個" Content="{Binding Item1Count}" />
+            <Label Height="50" FontSize="20pt" ContentStringFormat="Item2 : ###個" Content="{Binding Item2Count}" />
+            <Label Height="50" FontSize="20pt" ContentStringFormat="Item3 : ###個" Content="{Binding Item3Count}" />
+            <Label Height="50" FontSize="20pt" ContentStringFormat="Item4 : ###個" Content="{Binding Item4Count}" />
+            <Label Height="50" FontSize="20pt" ContentStringFormat="Item5 : ###個" Content="{Binding Item5Count}" />
+        </StackPanel>
+
+        <StackPanel x:Name="pnlStore" Grid.Column="2" Button.Click="OnClickItem">
+            <Button x:Name="btnItem1" Height="50" FontSize="20pt" Content="{Binding Item1.Price}" IsEnabled="{Binding Item1.IsBuy}" />
+            <Button x:Name="btnItem2" Height="50" FontSize="20pt" Content="{Binding Item2.Price}" IsEnabled="{Binding Item2.IsBuy}"  />
+            <Button x:Name="btnItem3" Height="50" FontSize="20pt" Content="{Binding Item3.Price}" IsEnabled="{Binding Item3.IsBuy}"  />
+            <Button x:Name="btnItem4" Height="50" FontSize="20pt" Content="{Binding Item4.Price}" IsEnabled="{Binding Item4.IsBuy}"  />
+            <Button x:Name="btnItem5" Height="50" FontSize="20pt" Content="{Binding Item5.Price}" IsEnabled="{Binding Item5.IsBuy}"  />
+        </StackPanel>
+    </Grid>
+</Window>
